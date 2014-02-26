@@ -4,4 +4,4 @@ else
   _define = (factory) -> module.exports = factory require
   
 _define
-	
+	title: 'Voici vos contacts'

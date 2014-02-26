@@ -3,4 +3,4 @@ if typeof define == 'function' and define.amd
 else
   _define = (factory) -> module.exports = factory require
   
-define ->
+_define ->

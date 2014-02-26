@@ -1,6 +1,10 @@
+if typeof define == 'function' and define.amd
+  _define = define
+else
+  _define = (factory) -> module.exports = factory require
+  
+_define ->
 
-(function(define) {
-define(function() {
 
 	/**
 	 * Custom comparator to sort contacts by last name, and then

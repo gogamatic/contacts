@@ -11,7 +11,7 @@ define
 	// CONTROLLER
 	//
 	controller: 
-		create: 'app/controller',
+		create: 'app/controller'
 		properties: 
 			_form: $ref: 'editView' 
 			_updateForm: $ref: 'form.setValues' 
@@ -22,9 +22,11 @@ define
 	// VIEWS
 	//
 
-`
 
-	contactsContainer: { $ref: 'dom.first!.contacts-view-container', at: 'root' },
+
+	contactsContainer: 
+		$ref: 'dom.first!.contacts-view-container'
+		at: 'root'
 
 	headerView: {
 		render: {

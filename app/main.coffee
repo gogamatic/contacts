@@ -1,32 +1,29 @@
-`
-define({
-
-	root: { $ref: 'dom!contactsApp' },
-
-	theme: { module: 'css!theme/basic.css' },
+define
+	root: $ref: 'dom!contactsApp' 
+	theme: module: 'css!theme/basic.css'
 
 	//
 	// DATA MODEL
 	//
-	contactsCollection: { wire: 'app/collection/spec' },
+	contactsCollection: wire: 'app/collection/spec'
 
 	//
 	// CONTROLLER
 	//
-	controller: {
+	controller: 
 		create: 'app/controller',
-		properties: {
-			_form: { $ref: 'editView' },
-			_updateForm: { $ref: 'form.setValues' }
-		},
-		connect: {
+		properties: 
+			_form: $ref: 'editView' 
+			_updateForm: $ref: 'form.setValues' 
+		connect: 
 			'contactsCollection.onEdit': 'editContact'
-		}
-	},
 
 	//
 	// VIEWS
 	//
+
+`
+
 	contactsContainer: { $ref: 'dom.first!.contacts-view-container', at: 'root' },
 
 	headerView: {

@@ -22,55 +22,42 @@ define
 	// VIEWS
 	//
 
-
-
 	contactsContainer: 
 		$ref: 'dom.first!.contacts-view-container'
 		at: 'root'
 
-	headerView: {
-		render: {
-			template: { module: 'text!app/header/template.html' },
-			replace: { module: 'i18n!app/header/strings' },
-			css: { module: 'css!app/header/style.css' }
-		},
-		insert: { first: 'root' }
-	},
+	headerView: 
+		render: 
+			template: module: 'text!app/header/template.html'
+			replace: module: 'i18n!app/header/strings'
+			css: module: 'css!app/header/style.css'
+		insert: first: 'root'
 
-	editView: {
-		render: {
-			template: { module: 'text!app/edit/template.html' },
-			replace: { module: 'i18n!app/edit/strings' },
-			css: { module: 'css!app/edit/structure.css' }
-		},
-		insert: { after: 'listView' },
-		on: {
+	editView: 
+		render: 
+			template: module: 'text!app/edit/template.html'
+			replace: module: 'i18n!app/edit/strings'
+			css: module: 'css!app/edit/structure.css'
+		insert: after: 'listView'
+		on: 
 			submit: 'form.getValues | contactsCollection.update'
-		},
-		connect: {
+		connect: 
 			'contactsCollection.onChange': 'reset'
-		}
-	},
 
-	listView: {
-		render: {
-			template: {module: 'text!app/list/template.html' },
-			css: { module: 'css!app/list/structure.css' }
-		},
-		insert: { first: 'contactsContainer' },
-		on: {
+	listView: 
+		render: 
+			template: module: 'text!app/list/template.html'
+			css: module: 'css!app/list/structure.css' 
+		insert: first: 'contactsContainer'
+		on: 
 			'click:.contact': 'contactsCollection.edit',
 			'click:.remove': 'contactsCollection.remove'
-		},
-		bind: {
-			to: { $ref: 'contactsCollection' },
-			comparator: { module: 'app/list/compareByLastFirst' },
-			bindings: {
-				firstName: '.first-name',
+		bind: 
+			to: $ref: 'contactsCollection'
+			comparator: module: 'app/list/compareByLastFirst'
+			bindings:
+				firstName: '.first-name'
 				lastName: '.last-name'
-			}
-		}
-	},
 
 	footerView: {
 		render: {

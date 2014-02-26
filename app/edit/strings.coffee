@@ -4,7 +4,7 @@ else
   _define = (factory) -> module.exports = factory require
   
 _define
-firstName: 'First Name'
+  firstName: 'First Name'
   lastName: 'Last Name'
   phone: 'Phone Number'
   email: 'E-Mail'

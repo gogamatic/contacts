@@ -59,24 +59,23 @@ define
 				firstName: '.first-name'
 				lastName: '.last-name'
 
-	footerView: {
-		render: {
-			template: { module: 'text!app/footer/template.html' },
-			replace: { module: 'i18n!app/footer/strings.js' },
-			css: { module: 'css!app/footer/style.css' }
-		},
-		insert: { last: 'root' }
-	},
+	footerView: 
+		render: 
+			template: module: 'text!app/footer/template.html'
+			replace: module: 'i18n!app/footer/strings.js'
+			css:  module: 'css!app/footer/style.css' 
+		insert: last: 'root' 
 
 	//
 	// HELPERS
 	//
-	form: { module: 'cola/dom/form' },
+	form: module: 'cola/dom/form'
 
 	// Wire.js plugins
-	plugins: [
-		{ module: 'wire/dom', classes: { init: 'loading' } },
+	$plugins: [
+		module: 'wire/dom', classes: init: 'loading'
+	,
 		'wire/dom/render', 'wire/on', 'wire/aop', 'wire/connect', 'cola'
 	]
-});
+
 `
